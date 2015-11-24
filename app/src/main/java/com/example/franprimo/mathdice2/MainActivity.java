@@ -6,6 +6,7 @@ import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends Activity implements ListaFragment.ListFragmentListener {
 
@@ -15,14 +16,38 @@ public class MainActivity extends Activity implements ListaFragment.ListFragment
         setContentView(R.layout.activity_main);
 
         ListaFragment lf = (ListaFragment) getFragmentManager().findFragmentById(R.id.listaFragment);
-        DetalleFragment df = (DetalleFragment) getFragmentManager().findFragmentById(R.id.detalleFragment);
+        //DetalleFragment df = (DetalleFragment) getFragmentManager().findFragmentById(R.id.detalleFragment);
+        VacioFragment vf = new VacioFragment();
 
-
+        getFragmentManager().beginTransaction().add(R.id.fragment_container, vf).commit();
     }
 
     //Tenemos que crear este metodo porque es el que implementa al ListFragmentListener
-    public void onListSelected(int position, String item){
+    public void onListSelected(int position){
+        if(position == 0){
+            Toast t;
+            t = Toast.makeText(this, "Esto abrirá el fragment dinamico del perfil", Toast.LENGTH_LONG);
+            t.show();
+        }
 
+        if(position == 1){
+            DetalleFragment df = new DetalleFragment();
+            FragmentTransaction transaction = getFragmentManager().beginTransaction();
+            transaction.replace(R.id.fragment_container, df);
+            transaction.commit();
+        }
+
+        if(position == 2){
+            Toast t;
+            t = Toast.makeText(this, "Esto abrirá el fragment dinamico de instrucciones", Toast.LENGTH_LONG);
+            t.show();
+        }
+
+        if(position == 3){
+            Toast t;
+            t = Toast.makeText(this, "Esto abrirá el fragment dinamico de información", Toast.LENGTH_LONG);
+            t.show();
+        }
     }
 
     @Override
@@ -32,28 +57,4 @@ public class MainActivity extends Activity implements ListaFragment.ListFragment
         return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        String name = item.getTitle().toString();
-
-        DetalleFragment detalleF = new DetalleFragment();
-        Bundle arg = new Bundle();
-        arg.putString("name", name);
-        detalleF.setArguments(arg);
-
-        //Intento colocar el fragment dinamico en su lugar
-        FragmentTransaction ft = getFragmentManager().beginTransaction();
-        ft.replace(R.id.detalleFragment, detalleF);
-        ft.commit();
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 }
