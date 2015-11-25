@@ -15,19 +15,23 @@ public class MainActivity extends Activity implements ListaFragment.ListFragment
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Coloco el fragment lista en su contenedor estatico
         ListaFragment lf = (ListaFragment) getFragmentManager().findFragmentById(R.id.listaFragment);
         //DetalleFragment df = (DetalleFragment) getFragmentManager().findFragmentById(R.id.detalleFragment);
-        VacioFragment vf = new VacioFragment();
+        //VacioFragment vf = new VacioFragment();
 
-        getFragmentManager().beginTransaction().add(R.id.fragment_container, vf).commit();
+        //Añado el perfil fragment al container
+        PerfilFragment pf = new PerfilFragment();
+        getFragmentManager().beginTransaction().add(R.id.fragment_container, pf).commit();
     }
 
     //Tenemos que crear este metodo porque es el que implementa al ListFragmentListener
     public void onListSelected(int position){
         if(position == 0){
-            Toast t;
-            t = Toast.makeText(this, "Esto abrirá el fragment dinamico del perfil", Toast.LENGTH_LONG);
-            t.show();
+            PerfilFragment pf = new PerfilFragment();
+            FragmentTransaction transaction = getFragmentManager().beginTransaction();
+            transaction.replace(R.id.fragment_container, pf);
+            transaction.commit();
         }
 
         if(position == 1){

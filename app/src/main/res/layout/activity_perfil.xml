@@ -3,21 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    android:background="#6eff5d"
-    >
-    <!--Contenedor del fragment estatico-->
+    tools:context="com.example.franprimo.mathdice2.PerfilActivity">
+
     <fragment class="com.example.franprimo.mathdice2.ListaFragment"
         android:name="com.example.franprimo.mathdice2.ListaFragment"
-        android:layout_width="250dip"
-        android:layout_height="match_parent"
-        android:id="@+id/listaFragment"
-        />
-
-    <!--Contenedor del fragment dinamico-->
-    <FrameLayout class="com.example.franprimo.mathdice2.DetalleFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/fragment_container"
+        android:id="@+id/perfilFragment"
         />
 
 </LinearLayout>

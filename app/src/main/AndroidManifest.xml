@@ -8,8 +8,8 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name"
+            android:name=".SplashImage"
+            android:label="SplashImage"
             android:screenOrientation="landscape" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,8 +18,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SplashImage"
-            android:label="@string/title_activity_splash_image" >
+            android:name=".PerfilActivity"
+            android:label="PerfilActivity"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="MainActivity"
+            android:screenOrientation="landscape" >
         </activity>
     </application>
 

@@ -13,7 +13,7 @@ public class SplashImage extends Activity {
 
 
     //Declaro una constante para el tiempo de retraso en milisegundos.
-    private long TIEMPO_RETRASO = 2000;
+    private long TIEMPO_RETRASO = 3000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +23,7 @@ public class SplashImage extends Activity {
         //Creo un objeto de tipo TimerTask con el que una vez pasado el tiempo, cambio de activity.
         TimerTask task = new TimerTask(){
             public void run(){
-                Intent mainIntent = new Intent(getApplicationContext(), MainActivity.class);
+                Intent mainIntent = new Intent(getApplicationContext(), PerfilActivity.class);
                 //Cambio del activity imagenPrincipal al activity MainActivity.
                 startActivity(mainIntent);
                 //Lo finalizo
