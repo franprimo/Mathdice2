@@ -26,8 +26,7 @@ public class SplashImage extends Activity {
                 Intent mainIntent = new Intent(getApplicationContext(), PerfilActivity.class);
                 //Cambio del activity imagenPrincipal al activity MainActivity.
                 startActivity(mainIntent);
-                //Lo finalizo
-                finish();
+
             }
         };
 

@@ -17,8 +17,6 @@ public class MainActivity extends Activity implements ListaFragment.ListFragment
 
         //Coloco el fragment lista en su contenedor estatico
         ListaFragment lf = (ListaFragment) getFragmentManager().findFragmentById(R.id.listaFragment);
-        //DetalleFragment df = (DetalleFragment) getFragmentManager().findFragmentById(R.id.detalleFragment);
-        //VacioFragment vf = new VacioFragment();
 
         //Añado el perfil fragment al container
         PerfilFragment pf = new PerfilFragment();
