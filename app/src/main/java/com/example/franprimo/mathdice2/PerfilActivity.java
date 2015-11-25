@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class PerfilActivity extends Activity {
 
@@ -18,12 +19,21 @@ public class PerfilActivity extends Activity {
         //Cargo el fragment en su contenedor estatico
         PerfilFragment pf = (PerfilFragment) getFragmentManager().findFragmentById(R.id.perfilFragment);
 
+        final EditText nombre = (EditText) findViewById(R.id.inputName);
+        final EditText anyos = (EditText) findViewById(R.id.inputEdad);
+
         //Listener del boton que nos pasara al MainActivity.
         Button btn = (Button) findViewById(R.id.adelanteBtn);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Recojo los datos introducidos en el editText y los almaceno en variables
+                //que voy a enviar junto con el intent.
+                String name = nombre.getText().toString();
+                String edad = anyos.getText().toString();
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                intent.putExtra("nombre", name);
+                intent.putExtra("edad", edad);
                 startActivity(intent);
 
             }

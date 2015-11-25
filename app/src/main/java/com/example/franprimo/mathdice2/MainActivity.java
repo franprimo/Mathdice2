@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -14,6 +15,15 @@ public class MainActivity extends Activity implements ListaFragment.ListFragment
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Recojo los datos que he enviado con el intent que pasaba a esta activity y se los asigno
+        //a dos variables.
+        Bundle bundle = getIntent().getExtras();
+        String nombre = bundle.getString("nombre");
+        String edad = bundle.getString("edad");
+
+        Log.i("Nombre:", nombre);
+        Log.i("Edad:", edad);
 
         //Coloco el fragment lista en su contenedor estatico
         ListaFragment lf = (ListaFragment) getFragmentManager().findFragmentById(R.id.listaFragment);
