@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.franprimo.mathdice2.PerfilFragment"
-    android:background="#6eff5d">
+    android:background="#2228ff">
 
     <!-- TODO: Update blank fragment layout -->
 

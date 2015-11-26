@@ -7,6 +7,7 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class DetalleFragment extends Fragment {
@@ -19,7 +20,21 @@ public class DetalleFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
+        //declaracionViews();
+
     }
+    /*
+    private void declaracionViews() {
+        final ImageView rojo1 = (ImageView)getView().findViewById(R.drawable.dado1);
+        final ImageView rojo2 = (ImageView)getView().findViewById(R.drawable.dado2);
+        final ImageView rojo3 = (ImageView)getView().findViewById(R.drawable.dado3);
+        final ImageView azul1 = (ImageView)getView().findViewById(R.drawable.dado1_6);
+        final ImageView azul2 = (ImageView)getView().findViewById(R.drawable.dado2_6);
+        final ImageView azul3 = (ImageView)getView().findViewById(R.drawable.dado3_6);
+
+    }
+    */
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

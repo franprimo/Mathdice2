@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageView2"
-        android:src="@drawable/dados"
+        android:src="@drawable/mathmenu"
         android:layout_gravity="center_horizontal"
         android:layout_weight="2" />
 
