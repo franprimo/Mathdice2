@@ -22,6 +22,7 @@ public class MainActivity extends Activity implements ListaFragment.ListFragment
         String nombre = bundle.getString("nombre");
         String edad = bundle.getString("edad");
 
+        //Muestro en consola los datos recibidos con el intent
         Log.i("Nombre:", nombre);
         Log.i("Edad:", edad);
 
